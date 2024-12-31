@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-white bg-opacity-50 dark:bg-gray-800 border-t">
+    <footer className="bg-white bg-opacity-50 dark:bg-gray-800">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -26,7 +26,7 @@ const Footer = () => {
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
                   <a
-                    href="https://zalo.me/0329254203"
+                    href=""
                     className="flex items-center hover:underline"
                   >
                     {/* <ZaloIcon/> */}
@@ -35,7 +35,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://t.me/dio2523"
+                    href=""
                     className="flex items-center hover:underline"
                   >
                     {/* <TelegramIcon/> */}
@@ -51,7 +51,7 @@ const Footer = () => {
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
                   <a
-                    href="https://www.instagram.com/_am.dio/"
+                    href=""
                     className="flex items-center hover:underline"
                   >
                     {/* <InstagramIcon /> */}
@@ -61,7 +61,7 @@ const Footer = () => {
 
                 <li>
                   <a
-                    href="https://www.facebook.com/daovandoi2003/"
+                    href=""
                     className="flex items-center hover:underline"
                   >
                     {/* <FacebookIcon /> */}
@@ -94,7 +94,7 @@ const Footer = () => {
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2024{" "}
             <a
-              href="https://www.instagram.com/_am.dio/"
+              href=""
               className="hover:underline"
             >
               _am.dio™

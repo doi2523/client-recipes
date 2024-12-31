@@ -62,19 +62,6 @@ const AddRecipeForm = () => {
     formData.append("country", country);
     if (image) formData.append("image", image);
 
-    console.log("Submitting FormData:", {
-      name,
-      description,
-      servings,
-      preparationTime,
-      cookingTime,
-      difficulty,
-      steps,
-      ingredients,
-      country,
-      image,
-    });
-
     axios
       .post(API.addRecipes, formData)
       .then(() => {
@@ -100,14 +87,14 @@ const AddRecipeForm = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-3xl font-bold mb-6 text-center">
+    <div className="max-w-5xl mx-auto p-6 bg-white shadow-lg rounded-lg min-h-screen">
+      <h2 className="text-3xl font-bold mb-4 text-center">
         Thêm Công Thức Nấu Ăn
       </h2>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-4">
         {/* Recipe Name, Description, and Country */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 gap-4">
           <div className="space-y-2">
             <label className="block text-lg font-medium text-gray-700">
               Tên Công Thức:
@@ -117,7 +104,7 @@ const AddRecipeForm = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div className="space-y-2">
@@ -129,7 +116,7 @@ const AddRecipeForm = () => {
               value={country}
               onChange={(e) => setCountry(e.target.value)}
               required
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
         </div>
@@ -141,7 +128,7 @@ const AddRecipeForm = () => {
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         {/* Image Upload */}
@@ -153,12 +140,12 @@ const AddRecipeForm = () => {
             type="file"
             onChange={handleImageChange}
             accept="image/*"
-            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         {/* Servings, Preparation Time, Cooking Time, and Difficulty */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           <div className="space-y-2">
             <label className="block text-lg font-medium text-gray-700">
               Khẩu phần cho:
@@ -168,7 +155,7 @@ const AddRecipeForm = () => {
               value={servings}
               onChange={(e) => setServings(e.target.value)}
               placeholder="3-4 người"
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -181,7 +168,7 @@ const AddRecipeForm = () => {
               value={preparationTime}
               onChange={(e) => setPreparationTime(e.target.value)}
               placeholder="Không có (nếu không có)"
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -194,7 +181,7 @@ const AddRecipeForm = () => {
               value={cookingTime}
               onChange={(e) => setCookingTime(e.target.value)}
               placeholder="Không có (nếu không có)"
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -205,7 +192,7 @@ const AddRecipeForm = () => {
             <select
               value={difficulty}
               onChange={(e) => setDifficulty(e.target.value)}
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="dễ">Dễ</option>
               <option value="trung bình">Trung Bình</option>
@@ -219,7 +206,7 @@ const AddRecipeForm = () => {
           <h3 className="text-xl font-semibold text-gray-700">Nguyên Liệu:</h3>
           {ingredients.map((ingredient, index) => (
             <div key={index} className="flex items-center gap-4">
-              <div className="w-4/12 space-y-2">
+              <div className="w-5/12 space-y-2">
                 <label className="block text-lg font-medium text-gray-700">
                   Nguyên Liệu {index + 1}:
                 </label>
@@ -230,10 +217,10 @@ const AddRecipeForm = () => {
                     handleIngredientChange(index, "name", e.target.value)
                   }
                   placeholder="Tên Nguyên Liệu"
-                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
-              <div className="w-6/12 space-y-2">
+              <div className="w-5/12 space-y-2">
                 <label className="block text-lg font-medium text-gray-700">
                   Số Lượng:
                 </label>
@@ -244,7 +231,7 @@ const AddRecipeForm = () => {
                     handleIngredientChange(index, "quantity", e.target.value)
                   }
                   placeholder="Số Lượng"
-                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
               <button
@@ -262,9 +249,9 @@ const AddRecipeForm = () => {
                   className="w-6 h-6"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M20 12H4"
                   ></path>
                 </svg>
@@ -294,7 +281,7 @@ const AddRecipeForm = () => {
                 <textarea
                   value={step}
                   onChange={(e) => handleStepChange(index, e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
               <button
@@ -312,9 +299,9 @@ const AddRecipeForm = () => {
                   className="w-6 h-6"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M20 12H4"
                   ></path>
                 </svg>
@@ -334,7 +321,7 @@ const AddRecipeForm = () => {
         <div className="text-center">
           <button
             type="submit"
-            className="w-full py-4 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none"
+            className="w-full py-3 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none"
           >
             Lưu Công Thức
           </button>

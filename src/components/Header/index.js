@@ -12,7 +12,7 @@ const DefaultHeader = () => {
   }, [location.pathname]);
 
   return (
-    <header className="top-0 left-0 fixed right-0 z-50 dark:shadow-none shadow-lg bg-white bg-opacity-50 backdrop-blur-lg border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 dark:backdrop-blur-lg dark:border-gray-700 dark:text-white">
+    <header className="top-0 left-0 right-0 z-50 dark:shadow-none shadow-lg bg-white bg-opacity-50 backdrop-blur-lg border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 dark:backdrop-blur-lg dark:border-gray-700 dark:text-white">
       <nav className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
         <Link to="/" className="flex items-center">
           <img
@@ -101,21 +101,9 @@ const DefaultHeader = () => {
             </li>
             <li>
               <Link
-                to="/about"
+                to="/cooking-recipes"
                 className={`block py-2 pr-4 pl-3 rounded lg:p-0  ${
-                  location.pathname === "/about"
-                    ? "text-white bg-blue-700 lg:bg-transparent lg:text-blue-700"
-                    : "text-gray-700 lg:text-gray-700 dark:text-white "
-                }`}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/cookingrecipes"
-                className={`block py-2 pr-4 pl-3 rounded lg:p-0  ${
-                  location.pathname === "/cookingrecipes"
+                  location.pathname === "/cooking-recipes"
                     ? "text-white bg-blue-700 lg:bg-transparent lg:text-blue-700"
                     : "text-gray-700 lg:text-gray-700 dark:text-white "
                 }`}
